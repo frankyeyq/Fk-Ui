@@ -34,6 +34,8 @@
         }
     }
     .components-docs__container{
+        text-align: left;
+        margin-left: 30px;
         flex: 1;
     }
 }

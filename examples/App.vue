@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="doc-header">
-      <div class="doc-header-logo">这是UI-LOGO</div>
+      <div class="doc-header-logo">FK-UI</div>
       <ul class="doc-header-nav">
         <li><router-link to="/components">组件</router-link></li>
       </ul>
