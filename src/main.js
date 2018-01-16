@@ -1,7 +1,10 @@
 import Tab from './components/Tab/index';
+import Button from './components/Button/index';
+// import './style/common/common.css';
 
 const components = [
-    Tab
+    Tab,
+    Button
 ];
 
 const install = function (Vue) {

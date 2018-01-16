@@ -1,9 +1,5 @@
 <template>
-  <div>
-    <ul>
-      <li></li>
-    </ul>
-  </div>
+  <p>欢迎使用</p>
 </template>
 
 <script>

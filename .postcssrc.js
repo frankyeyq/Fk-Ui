@@ -1,10 +1,26 @@
 // https://github.com/michael-ciniawsky/postcss-load-config
 
 module.exports = {
-  "plugins": {
-    "postcss-import": {},
-    "postcss-url": {},
-    // to edit target browsers: use "browserslist" field in package.json
-    "autoprefixer": {}
-  }
+  plugins: [
+      require('postcss-partial-import'),
+      require('postcss-url'),
+      require('saladcss-bem')({
+          defaultNamespace: 'mo',
+          separators: {
+              descendent: '__'
+          },
+          shortcuts: {
+              modifier: 'm',
+              descendent: 'd',
+              component: 'c'
+          }
+      }),
+      require('precss'),
+      require('postcss-utils'),
+      require('postcss-css-reset'),
+      require('postcss-shape'),
+      require('postcss-nested'),
+      require('postcss-calc'),
+      require('postcss-sass-color-functions')
+  ]
 }

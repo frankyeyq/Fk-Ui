@@ -1,6 +1,6 @@
 <template>
     <div>
-        <fk-tab/>
+        <fk-button>默认按钮</fk-button>
     </div>
 </template>
 

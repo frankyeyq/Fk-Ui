@@ -1,0 +1,5 @@
+:root {
+    --offwhite: #f8f8f8;
+    --darkerwhite: color(var(--offwhite) shade(20%));
+    --mainColor: #409EFF;
+}

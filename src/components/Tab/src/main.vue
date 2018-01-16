@@ -11,7 +11,5 @@
 </script>
 
 <style>
-@import '../../../style/index.css';
-@import '../../../style/common/common.css';
 @import '../../../style/components/tab/tab.css';
 </style>
