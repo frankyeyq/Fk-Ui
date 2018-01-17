@@ -11,5 +11,5 @@
 </script>
 
 <style>
-@import '../../../style/components/tab/tab.css';
+@import '../../../style/components/tab.css';
 </style>

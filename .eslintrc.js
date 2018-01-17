@@ -34,8 +34,8 @@ module.exports = {
         0,
         "always"
     ],
-    "no-console": 1,
-    "no-alert": 1,
+    "no-console": 0,
+    "no-alert": 0,
     "space-before-function-paren": [0, "always"]
   }
 }

@@ -1,7 +1,8 @@
 <template>
     <div class="components-docs">
         <ul class="components-docs__nav">
-            <li><router-link to="/button">Button 按钮</router-link></li>
+            <li><router-link to="/components/button">Button 按钮</router-link></li>
+            <li><router-link to="/components/radio">Radio 按钮</router-link></li>
             <!-- <li><router-link to="/tab">Tab 标签页</router-link></li> -->
         </ul>
         <div class="components-docs__container">
@@ -12,7 +13,6 @@
 
 <script>
     export default {
-        
     }
 </script>
 

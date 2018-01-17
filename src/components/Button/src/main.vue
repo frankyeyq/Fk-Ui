@@ -26,7 +26,7 @@
     }
 </script>
 
-<style>
+<style lang="postcss">
 @import '../../../style/common/common.css';
-@import '../../../style/components/button/button.scss';
+@import '../../../style/components/button.scss';
 </style>

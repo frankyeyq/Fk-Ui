@@ -4,6 +4,7 @@ import HelloWorld from '../components/HelloWorld';
 import Components from '../components/components';
 import Tab from '../components/Tab';
 import Button from '../components/Button';
+import Radio from '../components/Radio';
 
 Vue.use(Router);
 
@@ -19,8 +20,9 @@ export default new Router({
             name: 'Components',
             component: Components,
             children: [
-                {path: '/tab', name: 'Tab', component: Tab},
-                {path: '/button', name: 'Button', component: Button}
+                {path: '/components/tab', name: 'Tab', component: Tab},
+                {path: '/components/button', name: 'Button', component: Button},
+                {path: '/components/radio', name: 'Radio', component: Radio}
             ]
         }
     ]

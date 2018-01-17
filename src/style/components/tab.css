@@ -1,0 +1,6 @@
+@import '../common/common.css';
+@import '../common/var.css';
+
+body{
+    background: var(--offwhite);
+}
