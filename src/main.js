@@ -1,12 +1,13 @@
 import Tab from './components/Tab/index';
 import Button from './components/Button/index';
-import Radio from './components/Radio/index';
+import {Radio, RadioGroup} from './components/Radio/index';
 // import './style/common/common.css';
 
 const components = [
     Tab,
     Button,
-    Radio
+    Radio,
+    RadioGroup
 ];
 
 const install = function (Vue) {

@@ -1,3 +1,9 @@
-body{
-    
+.fk-radio{
+    &.fk-radio--disabled{
+        color: gray;
+        cursor: not-allowed;
+        .fk-radio__input{
+            cursor: not-allowed;
+        }
+    }
 }

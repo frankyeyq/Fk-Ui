@@ -1,7 +1,16 @@
 <template>
     <div>
-        <fk-radio v-model="radio" value="1" name="a">选项1</fk-radio>
-        <fk-radio v-model="radio" value="2" name="a">选项2</fk-radio>
+        <h2>基础用法</h2>
+        <fk-radio v-model="radio" value="1">选项1</fk-radio>
+        <fk-radio v-model="radio" value="2">选项2</fk-radio>
+        <h2>禁用状态</h2>
+        <fk-radio v-model="radio2" value="1" disabled>选项1</fk-radio>
+        <fk-radio v-model="radio2" value="2" disabled>选项2</fk-radio>
+        <h2>单选框组</h2>
+        <fk-radio-group >
+            <fk-radio v-model="radio3" value="1">选项1</fk-radio>
+            <fk-radio v-model="radio3" value="2">选项2</fk-radio>
+        </fk-radio-group>
     </div>
 </template>
 
@@ -9,7 +18,9 @@
     export default {
         data() {
             return {
-                radio: '3',
+                radio: '',
+                radio2: '',
+                radio3: '1',
                 gender: ''
             }
         },

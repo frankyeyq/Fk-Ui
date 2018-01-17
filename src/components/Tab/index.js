@@ -1,4 +1,4 @@
-import Tab from './src/main';
+import Tab from './src/tab';
 
 Tab.install = function (Vue) {
     Vue.component(Tab.name, Tab);
