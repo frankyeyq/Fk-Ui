@@ -1,8 +1,12 @@
 <template>
     <div class="components-docs">
         <ul class="components-docs__nav">
-            <li><router-link to="/components/button">Button 按钮</router-link></li>
-            <li><router-link to="/components/radio">Radio 按钮</router-link></li>
+            <li v-for="(item, index) in $router.options.routes[1].children" :key="index">
+                <router-link :to="item.path">{{item.name}}</router-link>
+            </li>
+            <!-- <li><router-link to="/components/button">Button 按钮</router-link></li> -->
+            <!-- <li><router-link to="/components/radio">Radio 单选框</router-link></li> -->
+            <!-- <li><router-link to="/components/radio">Checkbox 多选框</router-link></li> -->
             <!-- <li><router-link to="/tab">Tab 标签页</router-link></li> -->
         </ul>
         <div class="components-docs__container">
@@ -13,10 +17,14 @@
 
 <script>
     export default {
+        mounted() {
+        }
     }
 </script>
 
-<style lang="scss">
+<style lang="postcss">
+@import "github-markdown-css";
+@import 'highlight.js/styles/atelier-cave-light.css';
 .components-docs{
     display: flex;
     .components-docs__nav{
@@ -36,6 +44,7 @@
     .components-docs__container{
         text-align: left;
         margin-left: 30px;
+        margin-right: 30px;
         flex: 1;
     }
 }

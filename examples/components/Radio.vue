@@ -7,9 +7,9 @@
         <fk-radio v-model="radio2" value="1" disabled>选项1</fk-radio>
         <fk-radio v-model="radio2" value="2" disabled>选项2</fk-radio>
         <h2>单选框组</h2>
-        <fk-radio-group >
-            <fk-radio v-model="radio3" value="1">选项1</fk-radio>
-            <fk-radio v-model="radio3" value="2">选项2</fk-radio>
+        <fk-radio-group v-model="radio3">
+            <fk-radio value="1">选项1</fk-radio>
+            <fk-radio value="2">选项2</fk-radio>
         </fk-radio-group>
     </div>
 </template>

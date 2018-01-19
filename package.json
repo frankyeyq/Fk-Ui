@@ -16,6 +16,13 @@
   "dependencies": {
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
+    "vue-markdown-loader": "^2.2.3",
+    "cheerio": "^1.0.0-rc.2",
+    "github-markdown-css": "^2.9.0",
+    "highlight.js": "^9.12.0",
+    "markdown-it": "^8.4.0",
+    "markdown-it-anchor": "^4.0.0",
+    "markdown-it-container": "^2.0.0",
     "postcss-calc": "^6.0.1",
     "postcss-css-reset": "^1.0.2",
     "postcss-nested": "^2.1.2",

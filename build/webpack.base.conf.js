@@ -3,6 +3,7 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
+const utilsMd = require('./utilsmd')
 
 function resolve (dir) {
     return path.join(__dirname, '..', dir)
@@ -74,6 +75,11 @@ module.exports = {
                     limit: 10000,
                     name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
                 }
+            },
+            {
+                test: /\.MarkDown$|\.md$/,
+                loader: 'vue-markdown-loader',
+                options: utilsMd.markdownLoader()
             }
         ]
     },

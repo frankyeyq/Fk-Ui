@@ -6,7 +6,15 @@
 
 <script>
     export default {
-        name: 'fk-radio-group'
+        name: 'fk-radio-group',
+        props: {
+            value: {}
+        },
+        data() {
+            return {
+             test: '2'
+            }
+        }
     }
 </script>
 

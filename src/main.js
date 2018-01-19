@@ -1,13 +1,17 @@
 import Tab from './components/Tab/index';
 import Button from './components/Button/index';
 import {Radio, RadioGroup} from './components/Radio/index';
+import Checkbox from './components/Checkbox/index';
+import Input from './components/Input/index';
 // import './style/common/common.css';
 
 const components = [
     Tab,
     Button,
     Radio,
-    RadioGroup
+    RadioGroup,
+    Checkbox,
+    Input
 ];
 
 const install = function (Vue) {

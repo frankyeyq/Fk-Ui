@@ -29,23 +29,8 @@
                 this.$emit('input', e.target.value)
             }
         },
-        computed: {
-            isGroup() {
-                let parent = this.$parent;
-                while (parent) {
-                if (parent.$options._componentTag !== 'fk-radio-group') {
-                    parent = parent.$parent;
-                } else {
-                    this._radioGroup = parent;
-                    return true;
-                }
-                }
-                return false;
-            }
-        },
         mounted() {
-            console.log(this.isGroup);
-            console.log(this._radioGroup);
+            console.log(this.$parent.$options.value);
         }
     }
 </script>
