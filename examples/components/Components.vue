@@ -4,10 +4,6 @@
             <li v-for="(item, index) in $router.options.routes[1].children" :key="index">
                 <router-link :to="item.path">{{item.name}}</router-link>
             </li>
-            <!-- <li><router-link to="/components/button">Button 按钮</router-link></li> -->
-            <!-- <li><router-link to="/components/radio">Radio 单选框</router-link></li> -->
-            <!-- <li><router-link to="/components/radio">Checkbox 多选框</router-link></li> -->
-            <!-- <li><router-link to="/tab">Tab 标签页</router-link></li> -->
         </ul>
         <div class="components-docs__container">
                 <router-view/>

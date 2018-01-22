@@ -21,6 +21,7 @@ module.exports = {
       require('postcss-shape'),
       require('postcss-nested'),
       require('postcss-calc'),
-      require('postcss-sass-color-functions')
+      require('postcss-sass-color-functions'),
+      require('autoprefixer')
   ]
 }

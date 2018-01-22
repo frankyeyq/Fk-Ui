@@ -3,6 +3,7 @@ import Button from './components/Button/index';
 import {Radio, RadioGroup} from './components/Radio/index';
 import Checkbox from './components/Checkbox/index';
 import Input from './components/Input/index';
+import InputNumber from './components/InputNumber/index';
 // import './style/common/common.css';
 
 const components = [
@@ -11,7 +12,8 @@ const components = [
     Radio,
     RadioGroup,
     Checkbox,
-    Input
+    Input,
+    InputNumber
 ];
 
 const install = function (Vue) {

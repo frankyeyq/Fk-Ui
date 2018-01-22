@@ -14,7 +14,7 @@
             return {
                 hovering: false,
                 focus: false,
-                currentValue: null
+                currentValue: this.value
             }
         },
         props: {
