@@ -2,12 +2,12 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import HelloWorld from '../components/HelloWorld';
 import Components from '../components/components';
-import Tab from '../components/Tab';
 import Button from '../docs/button.md';
 import Radio from '../docs/radio.md';
 import Checkbox from '../docs/checkbox.md';
 import Input from '../docs/input.md';
 import InputNumber from '../docs/inputNumber.md'
+import Select from '../docs/select.md'
 Vue.use(Router);
 
 export default new Router({
@@ -27,7 +27,8 @@ export default new Router({
                 {path: '/components/checkbox', name: 'Checkbox 多选框', component: Checkbox},
                 // {path: '/components/input', name: 'Input 输入框', component: r => require.ensure([], () => r(require(`../docs/input.md`)))},
                 {path: '/components/input', name: 'Input 输入框', component: Input},
-                {path: '/components/inputNumber', name: 'InputNumber 计数器', component: InputNumber}
+                {path: '/components/inputNumber', name: 'InputNumber 计数器', component: InputNumber},
+                {path: '/components/select', name: 'Select 选择器', component: Select}
             ]
         }
     ]
