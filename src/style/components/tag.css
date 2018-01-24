@@ -1,0 +1,86 @@
+.fk-tag{
+    background-color: rgba(64,158,255,.1);
+    display: inline-block;
+    padding: 0 10px;
+    height: 32px;
+    line-height: 30px;
+    font-size: 12px;
+    color: #409eff;
+    border-radius: 4px;
+    box-sizing: border-box;
+    border: 1px solid rgba(64,158,255,.2);
+    white-space: nowrap;
+    &--success{
+        background-color: rgba(103,194,58,.1);
+        border-color: rgba(103,194,58,.2);
+        color: #67c23a;
+        .fk-tag__close-btn{
+            color: #67c23a;
+        }
+    }
+    &--info{
+        background-color: hsla(220,4%,58%,.1);
+        border-color: hsla(220,4%,58%,.2);
+        color: #909399;
+        .fk-tag__close-btn{
+            color: #909399;
+        }
+    }
+    &--warning{
+        background-color: rgba(230,162,60,.1);
+        border-color: rgba(230,162,60,.2);
+        color: #e6a23c;
+        .fk-tag__close-btn{
+            color: #e6a23c;
+        }
+    }
+    &--danger{
+        background-color: hsla(0,87%,69%,.1);
+        border-color: hsla(0,87%,69%,.2);
+        color: #f56c6c;
+        .fk-tag__close-btn{
+            color: #f56c6c;
+        }
+    }
+    &__close-btn{
+        border-radius: 50%;
+        text-align: center;
+        position: relative;
+        cursor: pointer;
+        font-size: 12px;
+        height: 16px;
+        width: 16px;
+        line-height: 16px;
+        vertical-align: middle;
+        top: -1px;
+        right: -5px;
+        color: #409eff;
+        display: inline-block;
+    }
+    &.hover{
+        .fk-tag__close-btn{
+            background-color: #409eff;
+            color: #fff;
+        }
+        &.fk-tag--success{
+            .fk-tag__close-btn{
+                background-color: #67c23a;
+            }
+        }
+        &.fk-tag--info{
+            .fk-tag__close-btn{
+                background-color: #909399;
+            }
+        }
+        &.fk-tag--warning{
+            .fk-tag__close-btn{
+                background-color: #e6a23c;
+            }
+        }
+        &.fk-tag--danger{
+            .fk-tag__close-btn{
+                background-color: #f56c6c;
+            }
+        }
+    }
+}

@@ -35,7 +35,7 @@
                 this.isSelected = false;
             },
             click() {
-                this.dispatch('fk-select', 'handleTest', 'a');
+                this.dispatch('fk-select', 'handleSelect', this.label);
                 // this.select.methods.select(this.label)
             }
         },

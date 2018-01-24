@@ -37,6 +37,7 @@
         :value="item.value">
     </fk-select-option>
 </fk-select>
+
 <script>
     export default {
         data() {
@@ -56,3 +57,13 @@
     }
 </script>
 ````
+
+## 禁用
+<fk-select v-model="value" disabled>
+    <fk-select-option 
+        v-for="item in options" 
+        :key="item.value"
+        :label="item.label"
+        :value="item.value">
+    </fk-select-option>
+</fk-select>

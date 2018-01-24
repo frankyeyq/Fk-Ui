@@ -8,6 +8,7 @@ import Checkbox from '../docs/checkbox.md';
 import Input from '../docs/input.md';
 import InputNumber from '../docs/inputNumber.md'
 import Select from '../docs/select.md'
+import Tag from '../docs/tag.md'
 Vue.use(Router);
 
 export default new Router({
@@ -28,7 +29,8 @@ export default new Router({
                 // {path: '/components/input', name: 'Input 输入框', component: r => require.ensure([], () => r(require(`../docs/input.md`)))},
                 {path: '/components/input', name: 'Input 输入框', component: Input},
                 {path: '/components/inputNumber', name: 'InputNumber 计数器', component: InputNumber},
-                {path: '/components/select', name: 'Select 选择器', component: Select}
+                {path: '/components/select', name: 'Select 选择器', component: Select},
+                {path: '/components/tag', name: 'Tag 标签', component: Tag}
             ]
         }
     ]

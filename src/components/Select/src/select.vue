@@ -1,7 +1,8 @@
 <template>
-    <div class="fk-select" :class="disabled?'disabled':''" @click="click" v-clickoutside="handleClose">
+    <div class="fk-select" @mouseenter="mouseenter" @mouseleave="mouseleave" :class="disabled?'disabled':''" @click="click" v-clickoutside="handleClose">
         <div class="fk-select__input-div">
-            <input ref="input" type="text" class="fk-select__input-div__input" @focus="focus" @blur="blur">
+            <input ref="input" type="text" class="fk-select__input-div__input" @focus="focus" @blur="blur" :disabled="disabled">
+            <i class="fk-select-arrow" :class="isFocused?'fk-select-arrow--up':'fk-select-arrow--down'"></i>
         </div>
         <transition name="fade" mode="out-in" appear>
             <ul v-if="isFocused" class="fk-select-options" @select="select">
@@ -20,7 +21,8 @@
         data() {
             return {
                 isFocused: false,
-                currentLabel: ''
+                currentLabel: '',
+                hover: false
             }
         },
         props: {
@@ -34,7 +36,7 @@
             select: 'a'
         },
         created() {
-            this.$on('handleTest', this.handleTest)
+            this.$on('handleSelect', this.handleSelect)
         },
         methods: {
             focus() {
@@ -56,8 +58,15 @@
             handleClose() {
                 this.isFocused = false;
             },
-            handleTest() {
-                console.log('handleTest');
+            handleSelect(val) {
+                this.$emit('input', val);
+                this.$emit('change', val);
+            },
+            mouseenter() {
+                this.hover = true;
+            },
+            mouseleave() {
+                this.hover = false;
             }
         }
     }

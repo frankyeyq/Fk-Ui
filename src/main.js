@@ -5,6 +5,7 @@ import Checkbox from './components/Checkbox/index';
 import Input from './components/Input/index';
 import InputNumber from './components/InputNumber/index';
 import {Select, SelectOption} from './components/Select/index';
+import Tag from './components/Tag/index';
 // import './style/common/common.css';
 
 const components = [
@@ -16,7 +17,8 @@ const components = [
     Input,
     InputNumber,
     Select,
-    SelectOption
+    SelectOption,
+    Tag
 ];
 
 const install = function (Vue) {
