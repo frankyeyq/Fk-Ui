@@ -29,6 +29,10 @@
             disabled: {
                 type: Boolean,
                 default: false
+            },
+            multiple: {
+                type: Boolean,
+                default: false
             }
         },
         directives: { Clickoutside },

@@ -14,7 +14,6 @@ function _broadcast(componentName, eventName, params) {
 export default {
     methods: {
         dispatch: function dispatch(componentName, eventName, params) {
-            console.log('dispatch');
             var parent = this.$parent || this.$root;
             var name = parent.$options.componentName;
             while (parent && (!name || name !== componentName)) {
@@ -24,9 +23,6 @@ export default {
                 }
             }
             if (parent) {
-                console.log(parent.$emit);
-                console.log(parent.$options);
-                console.log(parent.$options.componentName);
                 parent.$emit.apply(parent, [eventName].concat(params));
             }
         },

@@ -7,8 +7,14 @@
 <script>
     export default {
         name: 'fk-radio-group',
+        componentName: 'fk-radio-group',
         props: {
             value: {}
+        },
+        created() {
+            this.$on('handleChange', val => {
+                this.$emit('input', val);
+            })
         },
         data() {
             return {
