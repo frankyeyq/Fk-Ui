@@ -59,10 +59,7 @@
                 } else {
                     this.$emit('input', this.value)
                 }
-                
             }
-        },
-        mounted() {
         }
     }
 </script>

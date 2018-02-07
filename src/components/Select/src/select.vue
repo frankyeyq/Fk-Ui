@@ -1,6 +1,7 @@
 <template>
     <div class="fk-select" @mouseenter="mouseenter" @mouseleave="mouseleave" :class="disabled?'disabled':''" @click="click" v-clickoutside="handleClose">
         <div class="fk-select__input-div">
+            <div class="fk-select__multipe"></div>
             <input ref="input" type="text" class="fk-select__input-div__input" @focus="focus" @blur="blur" :disabled="disabled">
             <i class="fk-select-arrow" :class="isFocused?'fk-select-arrow--up':'fk-select-arrow--down'"></i>
         </div>

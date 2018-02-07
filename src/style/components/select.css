@@ -29,7 +29,7 @@
                     display: inline-block;
                     position: absolute;
                     right: 15px;
-                    top: 50%;
+                    top: 48%;
                     transform: rotate(45deg);
                     border-width: 0 1px 1px 0px;
                     transition: transform 0.3s;
@@ -44,7 +44,7 @@
                     display: inline-block;
                     position: absolute;
                     right: 15px;
-                    top: 50%;
+                    top: 48%;
                     transform: rotate(225deg);
                     border-width: 0 1px 1px 0px;
                     transition: transform 0.3s;

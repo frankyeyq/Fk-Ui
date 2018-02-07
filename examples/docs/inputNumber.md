@@ -1,4 +1,4 @@
-## 基本用法
+## 基础用法
 <fk-input-number v-model="num" :min="0" :max="10" ></fk-input-number>
 输入的值是：{{num}}
 ````html
