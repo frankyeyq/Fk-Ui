@@ -77,6 +77,22 @@
             &.hover{
                 background-color: #f5f7fa;
             }
+            &.selected{
+                background-color: #409eff;
+                color: white;
+            }
+        }
+    }
+    .fk-selected-tag{
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: 8px;
+        .fk-tag{
+            height: 24px;
+            line-height: 24px;
+            margin-right: 5px;
+            margin-bottom: 5px;
         }
     }
     &.disabled{

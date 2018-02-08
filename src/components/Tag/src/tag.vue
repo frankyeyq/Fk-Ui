@@ -1,7 +1,7 @@
 <template>
-    <div ref="tag" v-if="!remove" @mouseenter="mouseenter" @mouseleave="mouseleave" class="fk-tag" :class="[type?'fk-tag--'+type:'', {'hover': hover}]">
+    <div ref="tag" @mouseenter="mouseenter" @mouseleave="mouseleave" class="fk-tag" :class="[type?'fk-tag--'+type:'', {'hover': hover}]">
         <slot></slot>
-        <span v-if="closeable" class="fk-tag__close-btn" @click="close">X</span>
+        <span v-if="closeable" class="fk-tag__close-btn" @click.stop="close">X</span>
     </div>
 </template>
 
@@ -11,8 +11,7 @@
         componentName: 'fk-tag',
         data() {
             return {
-                hover: false,
-                remove: false
+                hover: false
             }
         },
         props: {
@@ -32,8 +31,7 @@
                 this.hover = false;
             },
             close() {
-                this.remove = true;
-                this.$emit('close', this.$refs.tag)
+                this.$emit('close', this)
             }
         }
     }

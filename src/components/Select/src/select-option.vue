@@ -1,12 +1,13 @@
 <template>
     <li 
     class="fk-select-option" 
-    :class="isSelected?'hover':''"
+    :class="[isHovered?'hover':'', isSelected?'selected':'']"
      @mouseenter="mouseenter" 
      @mouseleave="mouseleave"
      :label="label"
-     @click="click">
-        <slot>{{label}}</slot>
+     @click="click"
+     ref="selOpt">
+        {{label}}
     </li>
 </template>
 
@@ -19,28 +20,33 @@
         data() {
             return {
                 currentKey: null,
-                isSelected: false
+                isSelected: false,
+                isHovered: false
             }
         },
-        inject: ['select'],
+        inject: ['multiple', 'selected'],
+        watch: {
+            selected(val, oldVal) {
+                this.isSelected = val.includes(this.value);
+            }
+        },
         props: {
             label: [String],
             value: [String, Number]
         },
         methods: {
             mouseenter() {
-                this.isSelected = true;
+                this.isHovered = true;
             },
             mouseleave() {
-                this.isSelected = false;
+                this.isHovered = false;
             },
-            click() {
-                this.dispatch('fk-select', 'handleSelect', this.label);
-                // this.select.methods.select(this.label)
+            click(event) {
+                this.dispatch('fk-select', 'handleToggleSelect', this);
+                this.isSelected = this.selected.includes(this.value);
             }
         },
         mounted() {
-            // console.log(this.select);
         }
     }
 </script>
