@@ -6,6 +6,9 @@ import Input from './components/Input/index';
 import InputNumber from './components/InputNumber/index';
 import {Select, SelectOption} from './components/Select/index';
 import Tag from './components/Tag/index';
+import Switch from './components/Switch/index';
+import Slide from './components/Slide/index';
+
 // import './style/common/common.css';
 
 const components = [
@@ -18,7 +21,9 @@ const components = [
     InputNumber,
     Select,
     SelectOption,
-    Tag
+    Tag,
+    Switch,
+    Slide
 ];
 
 const install = function (Vue) {

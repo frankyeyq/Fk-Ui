@@ -9,6 +9,9 @@ import Input from '../docs/input.md';
 import InputNumber from '../docs/inputNumber.md'
 import Select from '../docs/select.md'
 import Tag from '../docs/tag.md'
+import Switch from '../docs/Switch.md'
+import Slide from '../docs/Slide.md'
+
 Vue.use(Router);
 
 export default new Router({
@@ -30,7 +33,9 @@ export default new Router({
                 {path: '/components/input', name: 'Input 输入框', component: Input},
                 {path: '/components/inputNumber', name: 'InputNumber 计数器', component: InputNumber},
                 {path: '/components/select', name: 'Select 选择器', component: Select},
-                {path: '/components/tag', name: 'Tag 标签', component: Tag}
+                {path: '/components/tag', name: 'Tag 标签', component: Tag},
+                {path: '/components/switch', name: 'Switch 开关', component: Switch},
+                {path: '/components/slide', name: 'Slide 滑块', component: Slide}
             ]
         }
     ]
