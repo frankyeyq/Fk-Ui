@@ -1,0 +1,62 @@
+.fk-color-picker{
+  width: 200px;
+  .fk-color-picker-container{
+    width: 150px;
+    height: 150px;
+    float: left;
+    position: relative;
+    .fk-color-picker-containe-white{
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg,#fff,hsla(0,0%,100%,0));
+    }
+    .fk-color-picker-containe-black{
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;background: linear-gradient(0deg,#000,transparent);
+    }
+    .fk-color-picker-containe-black-point{
+      width: 6px;
+      height: 6px;
+      background: white;
+      border-radius: 50%;
+      position: absolute;
+      box-sizing: border-box;
+      border: 1px solid #808080;
+      cursor: pointer;
+      transform: translate(-2px, -2px);
+    }
+  }
+  .fk-color-picker-hue-container{
+      position: relative;
+      width: 20px;
+      float: right;
+    .fk-color-picker-hue{
+      position: relative;
+      width: 20px;
+      height: 150px;
+      // border: 1px solid black;
+      box-sizing: border-box;
+      // background: linear-gradient(to bottom,#ff0000,#ff0080,#ff00ff,#8000ff,#0000ff,#0080ff,#00ffff,#00ff80,#00ff00,#80ff00,#ffff00,#ff8000,#ff0000);
+      background: linear-gradient(180deg,red 0,#ff0 17%,lime 33%,cyan 50%,blue 67%,#f0f 83%,red);
+    }
+    .fk-color-picker-hue-slide-bar{
+      width: 20px;
+      height: 4px;
+      // border: 1px solid #f0f0f0;
+      border-radius: 4px;
+      box-shadow: 0 0 2px rgba(0,0,0,.6);
+      background: white;
+      position: absolute;
+      left: 0;
+      top: 0;
+      box-sizing: border-box;
+      cursor: pointer;
+    }
+  }
+}

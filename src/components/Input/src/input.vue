@@ -1,8 +1,18 @@
 <template>
     <div class="fk-input" 
-    @mouseenter="hovering = true"
-    @mouseleave="hovering = false">
-        <input type="text" class="fk-input__input" :class="disabled?'fk-input__input--disabled':''" :value="currentValue" :placeholder="placeholder" @input="handleInput" :disabled="disabled" ref="input">
+        @mouseenter="hovering = true"
+        @mouseleave="hovering = false">
+        <input 
+            type="text" 
+            class="fk-input__input" 
+            :class="disabled?'fk-input__input--disabled':''" 
+            :value="currentValue" 
+            :placeholder="placeholder" 
+            @input="handleInput" 
+            @focus="handleFocus"
+            @blur="handleBlur"
+            :disabled="disabled" 
+            ref="input">
         <span v-if="clearable && currentValue && (hovering || focus)" class="fk-input__clearbtn" @click="clear">x</span>
     </div>
 </template>
@@ -30,6 +40,12 @@
             handleInput(event) {
                 this.$emit('input', event.target.value)
                 this.currentValue = event.target.value;
+            },
+            handleFocus(event) {
+                this.$emit('focus', event);
+            },
+            handleBlur(event) {
+                this.$emit('blur', event);
             },
             clear() {
                 this.$emit('input', '')

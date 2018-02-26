@@ -1,0 +1,43 @@
+.fk-date-picker{
+  .fk-date-picker-container{
+    position: absolute;
+    width: 400px;
+    color: #606266;
+    border: 1px solid #e4e7ed;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+    background: #fff;
+    border-radius: 4px;
+    line-height: 30px;
+    margin: 5px 0;
+    .fk-date-picker-container__header{
+      text-align: center;
+    } 
+    .fk-date-picker-content{
+      padding: 10px;
+      table{
+        width: 100%;
+        text-align: center;
+        tr{
+          th{
+            border-bottom: 1px solid #ebeef5;
+          }
+          td{
+              cursor: pointer;
+              &.prev-month, &.next-month{
+                color: #c0c4cc;
+              }
+              &.current-month{
+                &:hover{
+                  color: #409eff;
+                }
+              }
+              &.current-date{
+                color: #409eff;
+                font-weight: bolder;
+              }
+            }
+        }
+      }
+    }
+  }
+}

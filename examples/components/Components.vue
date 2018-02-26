@@ -12,10 +12,10 @@
 </template>
 
 <script>
-    export default {
-        mounted() {
-        }
+  export default {
+    mounted() {
     }
+  }
 </script>
 
 <style lang="postcss">

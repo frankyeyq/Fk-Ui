@@ -8,32 +8,36 @@ import {Select, SelectOption} from './components/Select/index';
 import Tag from './components/Tag/index';
 import Switch from './components/Switch/index';
 import Slide from './components/Slide/index';
+import DatePicker from './components/DatePicker/index';
+import ColorPicker from './components/ColorPicker/index';
 
 // import './style/common/common.css';
 
 const components = [
-    Tab,
-    Button,
-    Radio,
-    RadioGroup,
-    Checkbox,
-    Input,
-    InputNumber,
-    Select,
-    SelectOption,
-    Tag,
-    Switch,
-    Slide
+  Tab,
+  Button,
+  Radio,
+  RadioGroup,
+  Checkbox,
+  Input,
+  InputNumber,
+  Select,
+  SelectOption,
+  Tag,
+  Switch,
+  Slide,
+  DatePicker,
+  ColorPicker
 ];
 
 const install = function (Vue) {
-    if (install.installed) return;
-    components.map((component) => {
-        Vue.component(component.name, component);
-    });
+  if (install.installed) return;
+  components.map((component) => {
+    Vue.component(component.name, component);
+  });
 };
 
 export default {
-    version: '0.1.0',
-    install
+  version: '0.1.0',
+  install
 };
