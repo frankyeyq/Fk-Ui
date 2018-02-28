@@ -22,7 +22,6 @@
     },
     methods: {
       handleClick(event) {
-        console.log(event.target.checked);
         this.$emit('input', event.target.checked)
       },
       handleChange() {
@@ -39,6 +38,9 @@
   position: relative;
   width: 40px;
   height: 20px;
+  line-height: 20px;
+  display: inline-block;
+  vertical-align: middle;
   .fk-switch-input{
     position: absolute;
     top: 0;

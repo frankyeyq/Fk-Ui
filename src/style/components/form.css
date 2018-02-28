@@ -1,0 +1,28 @@
+.fk-form{
+  .fk-form-itme{
+    margin-bottom: 20px;
+    .fk-form-item-label{
+      line-height: 40px;
+      float: left;
+      text-align: right;
+      padding-right: 20px;
+      box-sizing: border-box;
+      &.is-required{
+        &:before{
+          content: "*";
+          color: #f56c6c;
+          margin-right: 4px;
+        }
+      }
+    }
+    .fk-form-item-content{
+      line-height: 40px;
+      margin-left: 100px;
+      &:after{
+        clear: both;
+        display: table;
+        content: "";
+      }
+    }
+  }
+}

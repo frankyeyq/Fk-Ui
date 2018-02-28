@@ -28,7 +28,7 @@
             }
         },
         props: {
-            checked: String,
+            checked: [String, Number],
             value: String,
             disabled: Boolean
         },

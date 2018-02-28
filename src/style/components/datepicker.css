@@ -1,6 +1,7 @@
 .fk-date-picker{
   .fk-date-picker-container{
     position: absolute;
+    z-index: 1;
     width: 400px;
     color: #606266;
     border: 1px solid #e4e7ed;
@@ -11,6 +12,30 @@
     margin: 5px 0;
     .fk-date-picker-container__header{
       text-align: center;
+      .fk-date-picker-container__header__context{
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .fk-date-picker-container__header__prevYearBtn{
+        &:before{
+          content: '<<'
+        }
+      }
+      .fk-date-picker-container__header__prevMonthBtn{
+        &:before{
+          content: '<'
+        }
+      }
+      .fk-date-picker-container__header__nextYearBtn{
+        &:before{
+          content: '>>'
+        }
+      }
+      .fk-date-picker-container__header__nextMonthBtn{
+        &:before{
+          content: '>'
+        }
+      }
     } 
     .fk-date-picker-content{
       padding: 10px;
@@ -34,6 +59,10 @@
               &.current-date{
                 color: #409eff;
                 font-weight: bolder;
+              }
+              &.chosed-day{
+                    color: #fff;
+                    background-color: #409eff;
               }
             }
         }

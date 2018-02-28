@@ -2,7 +2,15 @@
     <div class="fk-select" @mouseenter="mouseenter" @mouseleave="mouseleave" :class="disabled?'disabled':''" @click="handleClick" v-clickoutside="handleClose">
         <div class="fk-select__input-div">
             <div class="fk-select__multipe"></div>
-            <input readonly="readonly" ref="input" type="text" class="fk-select__input-div__input" @focus="focus" @blur="blur" :disabled="disabled">
+            <input 
+                readonly="readonly" 
+                ref="input" 
+                type="text" 
+                class="fk-select__input-div__input" 
+                @focus="focus" 
+                @blur="blur" 
+                :disabled="disabled"
+                :placeholder="(multiple && !selected.length || !multiple) ? (placeholder || '请选择') : ''">
             <i class="fk-select-arrow" :class="isFocused?'fk-select-arrow--up':'fk-select-arrow--down'"></i>
         </div>
         <div v-if="multiple" class="fk-selected-tag" ref="tagContainer" @click="focus">
@@ -33,7 +41,8 @@
         },
         props: {
             disabled: Boolean,
-            multiple: Boolean
+            multiple: Boolean,
+            placeholder: [String]
         },
         directives: { Clickoutside },
         provide() {
@@ -50,7 +59,6 @@
                 this.isFocused = !this.isFocused;
             },
             blur() {
-                // this.isFocused = false;
             },
             select(val) {
                 console.log(val);

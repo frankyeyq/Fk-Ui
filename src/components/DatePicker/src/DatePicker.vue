@@ -7,11 +7,11 @@
       @focus="pickDate"></fk-input>
     <div v-show="showDatePickContainer" class="fk-date-picker-container">
       <div class="fk-date-picker-container__header">
-        <fk-button type="text" @click="prevYear"><<</fk-button>
-        <fk-button type="text" @click="prevMonth"><</fk-button>
-        <span>{{year}}年{{month}}月</span>
-        <fk-button type="text" @click="nextMonth">></fk-button>
-        <fk-button type="text" @click="nextYear">>></fk-button>
+        <fk-button type="text" @click="prevYear" class="fk-date-picker-container__header__prevYearBtn"></fk-button>
+        <fk-button type="text" @click="prevMonth" class="fk-date-picker-container__header__prevMonthBtn"></fk-button>
+        <span class="fk-date-picker-container__header__context">{{year}}年{{month}}月</span>
+        <fk-button type="text" @click="nextMonth" class="fk-date-picker-container__header__nextMonthBtn"></fk-button>
+        <fk-button type="text" @click="nextYear" class="fk-date-picker-container__header__nextYearBtn"></fk-button>
       </div>
       <div class="fk-date-picker-content">
         <table>
@@ -54,7 +54,12 @@
         day: 23,
         currentDate: 1,
         currentMonth: 1,
-        currentYear: 2018
+        currentYear: 2018,
+        chosedDate: {
+          year: [Number],
+          month: [Number],
+          day: [Number]
+        }
       }
     },
     props: {
@@ -129,11 +134,14 @@
         }
         currentDate = [...prevDays];
         for(let i = 1; i < monthDays + 1; i++) {
+          let classList = ['current-month'];
           if (i === this.currentDate && opts.month === this.currentMonth && opts.year === this.currentYear) {
-            currentDate.push({class: 'current-month current-date', year: opts.year, month: opts.month, day: i});
-          } else {
-            currentDate.push({class: 'current-month', year: opts.year, month: opts.month, day: i});
+            classList.push('current-date');
           }
+          if (this.chosedDate.year === opts.year && this.chosedDate.month === opts.month && this.chosedDate.day === i) {
+            classList.push('chosed-day')
+          }
+          currentDate.push({class: classList.join(' '), year: opts.year, month: opts.month, day: i});
         }
         for(let i = 1; i < (42 - beginDay -  monthDays + 1); i++ ) {
           remainderDays.push({class: 'next-month', year: nextYear, month: nextMonth, day: i});
@@ -144,16 +152,21 @@
         }
       },
       choseDate(year, month, day) {
+        this.chosedDate = {
+          year,
+          month,
+          day
+        }
         let value = `${year}年${month}月${day}日`
         this.$refs.input.$refs.input.value = value;
         this.$emit('input', value);
+        this.renderDate({year, month});
         this.closeDatePickContainer();
       }
 
     },
     mounted() {
       this.initDate();
-      console.log(this.value);
     }
   }
 </script>

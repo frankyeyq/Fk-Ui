@@ -1,15 +1,16 @@
 import Tab from './components/Tab/index';
 import Button from './components/Button/index';
-import {Radio, RadioGroup} from './components/Radio/index';
-import Checkbox from './components/Checkbox/index';
+import { Radio, RadioGroup } from './components/Radio/index';
+import { Checkbox, CheckboxGroup } from './components/Checkbox/index';
 import Input from './components/Input/index';
 import InputNumber from './components/InputNumber/index';
-import {Select, SelectOption} from './components/Select/index';
+import { Select, SelectOption } from './components/Select/index';
 import Tag from './components/Tag/index';
 import Switch from './components/Switch/index';
 import Slide from './components/Slide/index';
 import DatePicker from './components/DatePicker/index';
 import ColorPicker from './components/ColorPicker/index';
+import { Form, FormItem } from './components/Form/index';
 
 // import './style/common/common.css';
 
@@ -19,6 +20,7 @@ const components = [
   Radio,
   RadioGroup,
   Checkbox,
+  CheckboxGroup,
   Input,
   InputNumber,
   Select,
@@ -27,7 +29,9 @@ const components = [
   Switch,
   Slide,
   DatePicker,
-  ColorPicker
+  ColorPicker,
+  Form,
+  FormItem
 ];
 
 const install = function (Vue) {

@@ -9,12 +9,7 @@
         name: 'fk-radio-group',
         componentName: 'fk-radio-group',
         props: {
-            value: {}
-        },
-        created() {
-            this.$on('handleChange', val => {
-                this.$emit('input', val);
-            })
+            value: [String, Number, Boolean]
         },
         data() {
             return {
