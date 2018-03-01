@@ -8,6 +8,7 @@
             :class="disabled?'fk-input__input--disabled':''" 
             :value="currentValue" 
             :placeholder="placeholder" 
+            :readonly="readonly"
             @input="handleInput" 
             @focus="handleFocus"
             @blur="handleBlur"
@@ -18,8 +19,12 @@
 </template>
 
 <script>
+    import Emitter from '../../../mixins/emitter'
+
     export default {
         name: 'fk-input',
+        componentName: 'fk-input',
+        mixins: [Emitter],
         data() {
             return {
                 hovering: false,
@@ -34,29 +39,52 @@
             },
             value: [String, Number],
             disabled: Boolean,
-            clearable: Boolean
+            clearable: Boolean,
+            readonly: Boolean
         },
         methods: {
             handleInput(event) {
-                this.$emit('input', event.target.value)
+                this.$emit('input', event.target.value);
                 this.currentValue = event.target.value;
+                if (this.isInForm()) {
+                    this.dispatch('fk-form-item', 'validateFromField', this.currentValue);
+                }
             },
             handleFocus(event) {
                 this.$emit('focus', event);
             },
             handleBlur(event) {
+                console.log('blur');
                 this.$emit('blur', event);
+                if (this.isInForm()) {
+                    this.dispatch('fk-form-item', 'fieldBlur', this.currentValue);
+                }
             },
             clear() {
-                this.$emit('input', '')
+                this.$emit('input', '');
                 this.$emit('change', '');
                 this.currentValue = '';
                 this.$refs.input.focus();
+            },
+            isInForm() {
+                let result = false;
+                let parent = this.$parent;
+                let count = 0;
+                while (parent !== undefined) {
+                    count++;
+                    if (parent.$options.componentName === 'fk-form-item') {
+                        result = true;
+                        break;
+                    } else {
+                        parent = parent.$parent;
+                    }
+                }
+               return result;
             }
         }
     }
 </script>
 
-<style scoped>
+<style>
 @import '../../../style/components/input.css';
 </style>

@@ -3,7 +3,10 @@
     <fk-input 
       v-model="input"
       ref="input"
-      :placeholder="'请选择日期'" 
+      :placeholder="'请选择日期'"
+      readonly
+      @blur="handleBlur"
+      @change="handleChange"
       @focus="pickDate"></fk-input>
     <div v-show="showDatePickContainer" class="fk-date-picker-container">
       <div class="fk-date-picker-container__header">
@@ -40,10 +43,14 @@
 <script>
   import Clickoutside from '../../../utils/clickoutside.js'
   import { getMonthBeginDay, getMonthDays } from '../../../utils/date.js'
+  import Emitter from '../../../mixins/emitter'
+  
   export default {
     name: 'fk-date-picker',
     componentName: 'fk-date-picker',
     directives: { Clickoutside },
+    mixins: [Emitter],
+    
     data() {
       return {
         input: '',
@@ -63,9 +70,14 @@
       }
     },
     props: {
-      value: String
+      value: [Date, String]
     },
     methods: {
+      handleBlur() {
+      },
+      handleChange() {
+        console.log('handleChange');        
+      },
       pickDate() {
         this.showDatePickContainer = true;
       },
@@ -159,9 +171,28 @@
         }
         let value = `${year}年${month}月${day}日`
         this.$refs.input.$refs.input.value = value;
-        this.$emit('input', value);
+        let dateTypeValue = new Date(year, month, day);
+        this.$emit('input', dateTypeValue);
+        if (this.isInForm()) {
+          this.dispatch('fk-form-item', 'validateFromField', dateTypeValue);
+        }
         this.renderDate({year, month});
         this.closeDatePickContainer();
+      },
+      isInForm() {
+        let result = false;
+        let parent = this.$parent;
+        let count = 0;
+        while (parent !== undefined) {
+            count++;
+            if (parent.$options.componentName === 'fk-form-item') {
+                result = true;
+                break;
+            } else {
+                parent = parent.$parent;
+            }
+        }
+        return result;
       }
 
     },

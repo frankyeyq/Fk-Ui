@@ -62,6 +62,7 @@
         box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
         box-sizing: border-box;
         margin: 5px 0;
+        z-index: 1;
         .fk-select-option{
             font-size: 14px;
             padding: 0 20px;

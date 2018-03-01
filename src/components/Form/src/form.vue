@@ -10,7 +10,7 @@
     componentName: 'fk-form',
     data() {
       return {
-
+        fields: []
       }
     },
     provide() {
@@ -20,11 +20,19 @@
     },
     props: {
       labelWidth: String,
-      rules: Object
+      rules: Object,
+      model: Object
+    },
+    methods: {
+      validate(callback) {
+        let result = this.fields.map(item => {
+          return item.validate();
+        });
+      }
     },
     created() {
       this.$on('addField', (field) => {
-        console.log(field);
+        this.fields.push(field);
       })
     },
     mounted() {
@@ -32,6 +40,6 @@
   }
 </script>
 
-<style scoped>
+<style>
 @import '../../../style/components/form.css';
 </style>

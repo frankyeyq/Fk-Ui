@@ -23,6 +23,23 @@
         display: table;
         content: "";
       }
+      .fk-form-item-error{
+        font-size: 12px;
+        color: #f56c6c;
+        height: 20px;
+        line-height: 20px;
+        position: absolute;
+      }
+    }
+    &.is-error{
+      .fk-input__input, .fk-select__input-div__input{
+        border-color: red;
+      }
+    }
+    &.is-success{
+      .fk-input__input, .fk-select__input-div__input{
+        border-color: #67c23a;
+      }
     }
   }
 }

@@ -27,10 +27,12 @@
 </template>
 
 <script>
+    import Emitter from '../../../mixins/emitter'
     import Clickoutside from '../../../utils/clickoutside.js'
     export default {
         name: 'fk-select',
         componentName: 'fk-select',
+        mixins: [Emitter],
         data() {
             return {
                 isFocused: false,
@@ -96,6 +98,9 @@
                         this.computeInputHeight();
                     });
                 }
+                if (this.isInForm()) {
+                    this.dispatch('fk-form-item', 'validateFromField');
+                }
             },
             mouseenter() {
                 this.hover = true;
@@ -116,6 +121,21 @@
             computeInputHeight() {
                 var height = this.$refs['tagContainer'].offsetHeight;
                 this.$refs['input'].style.height = Math.max(height-5, 40) + 'px';
+            },
+            isInForm() {
+                let result = false;
+                let parent = this.$parent;
+                let count = 0;
+                while (parent !== undefined) {
+                    count++;
+                    if (parent.$options.componentName === 'fk-form-item') {
+                        result = true;
+                        break;
+                    } else {
+                        parent = parent.$parent;
+                    }
+                }
+               return result;
             }
         },
         mounted() {

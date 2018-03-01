@@ -14,9 +14,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "vue": "^2.2.1",
-    "vue-router": "^3.0.1",
-    "vue-markdown-loader": "^2.2.3",
+    "async-validator": "^1.8.2",
     "cheerio": "^1.0.0-rc.2",
     "github-markdown-css": "^2.9.0",
     "highlight.js": "^9.12.0",
@@ -30,7 +28,10 @@
     "postcss-sass-color-functions": "^1.1.0",
     "postcss-shape": "0.0.1",
     "postcss-url": "^7.3.0",
-    "postcss-utils": "^1.0.2"
+    "postcss-utils": "^1.0.2",
+    "vue": "^2.2.1",
+    "vue-markdown-loader": "^2.2.3",
+    "vue-router": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
