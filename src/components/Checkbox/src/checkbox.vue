@@ -8,9 +8,11 @@
 </template>
 
 <script>
+    import Emitter from '../../../mixins/emitter'
     export default {
 			name: 'fk-checkbox',
 			componentName: 'fk-checkbox',
+        mixins: [Emitter],
 			data() {
 					return {
 						isChecked: false,
@@ -47,8 +49,26 @@
 					} else {
 						this.isChecked = this.$refs.checkboxInput.checked;
 					}
-					this.$emit('input', this.$refs.checkboxInput.checked)
-				}
+					this.$emit('input', this.$refs.checkboxInput.checked);
+					if (this.isInForm()) {
+						this.dispatch('fk-form-item', 'fieldChange');
+					}
+				},
+				isInForm() {
+                let result = false;
+                let parent = this.$parent;
+                let count = 0;
+                while (parent !== undefined) {
+                    count++;
+                    if (parent.$options.componentName === 'fk-form-item') {
+                        result = true;
+                        break;
+                    } else {
+                        parent = parent.$parent;
+                    }
+                }
+               return result;
+            }
 			},
 			mounted() {
 				if (this.isGroup) {

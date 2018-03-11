@@ -20,4 +20,5 @@ pre{
     margin-bottom: 25px;
     border-radius: 4px;
     -webkit-font-smoothing: auto;
+    white-space: pre-wrap;
 }

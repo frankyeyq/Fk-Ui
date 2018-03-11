@@ -10,7 +10,9 @@ import Switch from './components/Switch/index';
 import Slide from './components/Slide/index';
 import DatePicker from './components/DatePicker/index';
 import ColorPicker from './components/ColorPicker/index';
+import Pagination from './components/Pagination/index';
 import { Form, FormItem } from './components/Form/index';
+import { Carousel, CarouselItem } from './components/Carousel/index';
 
 // import './style/common/common.css';
 
@@ -31,7 +33,10 @@ const components = [
   DatePicker,
   ColorPicker,
   Form,
-  FormItem
+  FormItem,
+  Carousel,
+  CarouselItem,
+  Pagination
 ];
 
 const install = function (Vue) {

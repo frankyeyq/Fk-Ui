@@ -16,7 +16,7 @@
       class="fk-form-item-content"
       :style="contentStyle">
       <slot></slot>
-      <div v-show="validateState === 'error'" class="fk-form-item-error">
+      <div v-if="validateState === 'error'" class="fk-form-item-error">
         {{validateMessage}}
       </div>
     </div>
@@ -53,9 +53,11 @@
     },
     methods: {
       validate() {
+        let res = false;
         this.itemValue = this.fkForm.model[this.prop];
+        console.log(this.itemValue);
         if (!this.getRules[this.prop]) {
-          return;
+          return true;
         }
         var descriptor = {
           [this.prop]: this.getRules[this.prop]
@@ -65,15 +67,28 @@
         }
         var validator = new AsyncValidator(descriptor);
         validator.validate(validateValue, (errors, fields) => {
-          this.validateState = errors ? 'error' : 'success';
-          this.validateMessage = errors ? errors[0].message : '';
+          if (errors) {
+            this.validateState = 'error';
+            this.validateMessage = errors[0].message;
+            res = false;
+          } else {
+            this.validateState = 'success';
+            this.validateMessage = '';
+            res = true;
+          }
         });
+        return res;
       },
       validateFromField() {
         this.validate();
       },
       fieldBlur() {
         if (this.getTrigger() === 'blur') {
+          this.validate();
+        }
+      },
+      fieldChange() {
+        if (this.getTrigger() === 'change') {
           this.validate();
         }
       },
@@ -98,6 +113,7 @@
         this.dispatch('fk-form', 'addField', this);
         this.$on('validateFromField', this.validateFromField);
         this.$on('fieldBlur', this.fieldBlur);
+        this.$on('fieldChange', this.fieldChange);
       }
     }
   }

@@ -3,7 +3,7 @@
   <fk-form-item label="用户名" required prop="input">
     <fk-input v-model="ruleForm.input"></fk-input>  
   </fk-form-item> 
-<fk-form-item label="是否打包" prop="radio">
+  <fk-form-item label="是否打包" prop="radio">
     <fk-radio-group v-model="ruleForm.radio">
       <fk-radio value="1">选项1</fk-radio>
       <fk-radio value="2">选项2</fk-radio>
@@ -43,7 +43,7 @@
       return {
         ruleForm: {
           input: '',
-          radio: '1',
+          radio: '',
           checkbox: ['选择1'],
           select: '',
           date: '',
@@ -68,13 +68,21 @@
           ],
           select: [
             { required: true, message: '请选择'}
+          ],
+          checkbox: [
+            { required: true, type: 'array', message: '请选择一种方式', trigger: 'change'}
+          ],
+          radio: [
+            { required: true, type: 'string', message: '请选择一种方式', trigger: 'change'}
           ]
         }
       }
     },
     methods: {
       submit() {
-        let res = this.$refs.myForm.validate();
+        let res = this.$refs.myForm.validate(res => {
+          console.log(res);
+        });
       }
     }
   }

@@ -18,6 +18,7 @@
     .fk-form-item-content{
       line-height: 40px;
       margin-left: 100px;
+      position: relative;
       &:after{
         clear: both;
         display: table;
@@ -29,6 +30,7 @@
         height: 20px;
         line-height: 20px;
         position: absolute;
+        left: 20px;
       }
     }
     &.is-error{

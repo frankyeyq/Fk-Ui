@@ -54,7 +54,6 @@
                 this.$emit('focus', event);
             },
             handleBlur(event) {
-                console.log('blur');
                 this.$emit('blur', event);
                 if (this.isInForm()) {
                     this.dispatch('fk-form-item', 'fieldBlur', this.currentValue);

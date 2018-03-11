@@ -59,6 +59,24 @@
                 } else {
                     this.$emit('input', this.value)
                 }
+                if (this.isInForm()) {
+                    this.dispatch('fk-form-item', 'fieldChange');
+                } 
+            },
+            isInForm() {
+                let result = false;
+                let parent = this.$parent;
+                let count = 0;
+                while (parent !== undefined) {
+                    count++;
+                    if (parent.$options.componentName === 'fk-form-item') {
+                        result = true;
+                        break;
+                    } else {
+                        parent = parent.$parent;
+                    }
+                }
+               return result;
             }
         }
     }

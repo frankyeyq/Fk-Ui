@@ -28,6 +28,8 @@
         let result = this.fields.map(item => {
           return item.validate();
         });
+        var validated = !result.some(item => item === false);
+        callback(validated);
       }
     },
     created() {

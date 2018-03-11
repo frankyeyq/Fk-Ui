@@ -14,6 +14,8 @@ import Slide from '../docs/Slide.md'
 import DatePicker from '../docs/DatePicker.md'
 import ColorPicker from '../docs/ColorPicker.md'
 import Form from '../docs/Form.md'
+import Carousel from '../docs/Carousel.md'
+import Pagination from '../docs/Pagination.md'
 
 Vue.use(Router);
 
@@ -41,7 +43,9 @@ export default new Router({
         {path: '/components/slide', name: 'Slide 滑块', component: Slide},
         {path: '/components/datepicker', name: 'DatePicker 日期选择器', component: DatePicker},
         {path: '/components/colorpicker', name: 'ColorPicker 颜色选择器', component: ColorPicker},
-        {path: '/components/form', name: 'Form 表单', component: Form}
+        {path: '/components/form', name: 'Form 表单', component: Form},
+        {path: '/components/carousel', name: 'Carousel 跑马灯', component: Carousel},
+        {path: '/components/pagination', name: 'Pagination 分页', component: Pagination}
       ]
     }
   ]
