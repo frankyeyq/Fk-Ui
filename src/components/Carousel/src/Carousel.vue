@@ -1,8 +1,11 @@
 <template>
-  <div class="fk-carousel" :style="style">
+  <div class="fk-carousel"
+     @mouseenter.self="mouseenter" 
+     @mouseleave.self="mouseleave"
+     :style="style">
     <slot></slot>
-    <div class="fk-carousel-prevBtn" @click="goPrev"></div>
-    <div class="fk-carousel-nextBtn" @click="goNext"></div>
+    <div class="fk-carousel-prevBtn" :class="[{'showBtn': showBtn}]" @click="goPrev"></div>
+    <div class="fk-carousel-nextBtn" :class="[{'showBtn': showBtn}]" @click="goNext"></div>
     <div class="fk-carousel-pagination-buttons">
       <span class="fk-carousel-pagination-button" :class="[{'active': index === activeIndex}]" v-for="(i, index) in itemList" :key="index" @click="goPage(index)"></span>
     </div>
@@ -19,7 +22,8 @@
         itemNum: 0,
         activeIndex: 0,
         lastActiveIndex: 0,
-        isAnimating: false
+        isAnimating: false,
+        isHovering: false
       }
     },
     props: {
@@ -30,6 +34,10 @@
       height: {
         type: String,
         default: '200'
+      },
+      arrow: {
+        type: String,
+        default: 'hover'
       }
     },
     computed: {
@@ -50,8 +58,17 @@
           return this.activeIndex + 1
         }
       },
+      showBtn() {
+        return ((this.arrow === 'hover' && this.isHovering) || (this.arrow === 'always'));
+      }
     },
     methods: {
+      mouseenter() {
+        this.isHovering = true;
+      },
+      mouseleave() {
+        this.isHovering = false;
+      },
       addItem(item) {
         this.itemList.push(item);
       },

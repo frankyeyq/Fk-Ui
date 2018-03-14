@@ -34,6 +34,10 @@
     background: white;
     cursor: pointer;
     z-index: 3;
+    display: none;
+    &.showBtn{
+      display: block;
+    }
   }
   .fk-carousel-prevBtn{
     left: 20px;

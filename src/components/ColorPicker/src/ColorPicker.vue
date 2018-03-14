@@ -1,7 +1,5 @@
 <template>
   <div class="fk-color-picker">
-    <div class="test" ref="test" style="width: 30px;height: 30px;border: 1px solid black;margin-bottom: 10px;"></div>
-    <div class="rgbhex">{{rgbHex}}</div>
     <div class="fk-color-picker-container" @click="containerClick" ref="container" :style="`background: ${background};`">
       <div class="fk-color-picker-containe-white"></div>
       <div class="fk-color-picker-containe-black"></div>
@@ -86,7 +84,7 @@
         this.color = this.updateColor();
         this.background = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
         this.rgbHex = '#' + rgb2hex(this.color).join('').toUpperCase();
-        this.$refs.test.style.backgroundColor = `rgb(${this.color[0]}, ${this.color[1]}, ${this.color[2]})`
+        this.$emit('input', this.rgbHex);
       },
       setPoint(event) {
         let containerRect = this.$refs.container.getBoundingClientRect();
@@ -99,7 +97,7 @@
         this.value = 100 - this.pointTop / containerRect.height * 100;
         let color = this.updateColor();
         this.rgbHex = '#' + rgb2hex(color).join('').toUpperCase();
-        this.$refs.test.style.backgroundColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`
+        this.$emit('input', this.rgbHex);
       },
       hueClick(event) {
         this.setSlideBar(event);

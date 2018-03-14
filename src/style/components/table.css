@@ -1,0 +1,30 @@
+.fk-table {
+  .fk-table-hidden-column{
+    // visibility: hidden;
+  }
+  .fk-table-container{
+    border-collapse: collapse;
+    th, td{
+      padding: 12px;
+    }
+    thead{
+      tr{
+        th{
+          box-sizing: border-box;
+          border-bottom: 1px solid #eaeaea;
+          background: #fafafa;
+        }
+      }
+    }
+    tbody{
+      tr{
+        &:hover{
+          background: #ebf3ff;
+        }
+        td{
+          border-bottom: 1px solid #eaeaea;
+        }
+      }
+    }
+  }
+}

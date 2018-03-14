@@ -11,6 +11,7 @@
     display: inline-block;
     cursor: pointer;
     margin: 0 2px;
+    user-select: none;
     &:hover{
       border-color: #20A0FF;
       color: #20A0FF;

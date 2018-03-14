@@ -13,6 +13,7 @@ import ColorPicker from './components/ColorPicker/index';
 import Pagination from './components/Pagination/index';
 import { Form, FormItem } from './components/Form/index';
 import { Carousel, CarouselItem } from './components/Carousel/index';
+import { Table, TableColumn } from './components/Table/index';
 
 // import './style/common/common.css';
 
@@ -36,7 +37,9 @@ const components = [
   FormItem,
   Carousel,
   CarouselItem,
-  Pagination
+  Pagination,
+  Table,
+  TableColumn
 ];
 
 const install = function (Vue) {
